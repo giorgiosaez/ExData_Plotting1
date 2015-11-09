@@ -23,13 +23,13 @@ datass$Timed=strptime(paste(as.character(datass$Dated)
 sub1 <- as.numeric(as.character(na.omit(datass$Sub_metering_1)))
 sub2 <- as.numeric(as.character(na.omit(datass$Sub_metering_2)))
 sub3 <- as.numeric(as.character(na.omit(datass$Sub_metering_3)))
-with(datass,plot(datass$Timed, sub1, 
+png(filename = "./plot3.png",width = 480, height = 480)
+with(datass,plot(Timed, sub1, 
                  ylab = "Energy sub metering",xlab = "",
                  type = "l"))
-with(datass, points(datass$Timed, sub1, col = "black",type = "l"))
 with(datass, points(datass$Timed, sub2, col = "Red",type = "l"))
 with(datass, points(datass$Timed, sub3, col = "Blue",type = "l"))
-legend("topright", lty=c(1,1,1),bty = "n", col = c("Black","Red","Blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright", lty=c(1,1,1),bty = "o", col = c("Black","Red","Blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
-dev.copy(png, "plot3.png",width = 480, height = 480)
 dev.off()
+

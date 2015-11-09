@@ -43,5 +43,5 @@ legend("topright", lty=c(1,1,1),bty = "n", col = c("Black","Red","Blue"), legend
 plot(datass$Timed, voltage, ylab = "Voltage", xlab = "datetime",type = "l")
 plot(datass$Timed, reactive,ylab="Global_reactive_power", xlab = "datetime",type = "l")
 
-#dev.copy(png, "plot4.png",width = 480, height = 480)
+dev.copy(png, "plot4.png",width = 480, height = 480)
 dev.off()
